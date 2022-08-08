@@ -1,13 +1,18 @@
-function yearsDifference(date1, date2) {
+function yearsDifference(date1, date2, decimals=8) {
     var difference = date1.getTime() - date2.getTime();
-    return (difference / 1000 / 60 / 60 / 24 / 365.25).toFixed(8);
+    return (difference / 1000 / 60 / 60 / 24 / 365.25).toFixed(decimals);
 }
 
 function age() {
-    var currentdate = new Date();
-    var birthdate = new Date(2001, 12, 7, 12, 30, 0, 0);
+    const currentdate = new Date();
+    const birthdate = new Date(2001, 12, 7, 12, 30, 0, 0);
 
-    document.querySelector('h1').innerHTML = yearsDifference(currentdate, birthdate);
+    const realage = yearsDifference(currentdate, birthdate)
+    const integer = Math.floor(realage)
+    const decimal = Math.floor((realage - integer) * 10 ** 8)
+
+    document.getElementById('integer').innerHTML = integer;
+    document.getElementById('decimal').innerHTML = `.${decimal}`;
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -32,9 +37,6 @@ window.onscroll = function () {
                 "fixedY": window.scrollY
             };
         }
-        document.querySelector('#paco').style.padding = Math.max(200 - window.scrollY + scrolling.fixedY, 10) + 'px 0px';
-
-        console.log(Math.max(200 - window.scrollY + scrolling.fixedY, 0));
-        // console.log(window.getComputedStyle(document.querySelector('#paco'), null).getPropertyValue('padding-top'))
+        document.querySelector('#paco').style.padding = Math.max(200 - window.scrollY + scrolling.fixedY, 0) + 'px 0px';
     }
 };

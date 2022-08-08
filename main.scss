@@ -4,11 +4,26 @@ $theme-colors: (
     "light": #f8f7f3
 );
 
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootstrap/scss/bootstrap";
 
 #paco {
     padding: 200px 0px;
     // animation-name: from-center-to-left;
     // animation-duration: 2s;
     // animation-fill-mode: forwards;
+}
+
+#paco > div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#integer {
+    font-size: 120px;
+    
+}
+
+#decimal {
+    font-size: 60px;
+    margin-bottom: -45px;
 }
