@@ -1,0 +1,14 @@
+$theme-colors: (
+    "primary": #f3e5d6,
+    "secondary": #C4BDC9,
+    "light": #f8f7f3
+);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+#paco {
+    padding: 200px 0px;
+    // animation-name: from-center-to-left;
+    // animation-duration: 2s;
+    // animation-fill-mode: forwards;
+}
