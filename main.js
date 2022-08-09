@@ -19,24 +19,3 @@ document.addEventListener('DOMContentLoaded', function () {
     age();
     setInterval(age, 500);
 });
-
-var scrolling = {
-    "fixed": false,
-    "fixedY": null
-};
-
-window.onscroll = function () {
-    var div = document.querySelector('#paco');
-    var paddingTop = window.getComputedStyle(div, null).getPropertyValue('padding-top');
-    paddingTop = parseInt(paddingTop);
-
-    if (document.querySelector('#paco').getBoundingClientRect().top === 0) {
-        if (!scrolling.fixed || scrolling.fixed && window.scrollY < scrolling.fixedY) {
-            scrolling = {
-                "fixed": true,
-                "fixedY": window.scrollY
-            };
-        }
-        document.querySelector('#paco').style.padding = Math.max(200 - window.scrollY + scrolling.fixedY, 0) + 'px 0px';
-    }
-};
