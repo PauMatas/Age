@@ -10,10 +10,13 @@ function age() {
 
   const realage = yearsDifference(currentdate, birthdate);
   const integer = Math.floor(realage);
-  const decimal = Math.floor((realage - integer) * 10 ** 8);
+  const decimal = realage - integer;
 
   document.getElementById("integer").innerHTML = integer;
-  document.getElementById("decimal").innerHTML = `.${decimal}`;
+  document.getElementById("decimal").innerHTML = decimal
+    .toFixed(8)
+    .toString()
+    .substring(1);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
