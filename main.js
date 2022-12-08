@@ -4,13 +4,13 @@ function yearsDifference(date1, date2, decimals = 8) {
 }
 
 function age() {
-  const currentdate = new Date();
+  const current_date = new Date();
   // Be aware that the month is 0-indexed, so 11 is actually December
   const birthdate = new Date(2001, 11, 7, 12, 30, 0, 0);
 
-  const realage = yearsDifference(currentdate, birthdate);
-  const integer = Math.floor(realage);
-  const decimal = realage - integer;
+  const real_age = yearsDifference(current_date, birthdate);
+  const integer = Math.floor(real_age);
+  const decimal = real_age - integer;
 
   document.getElementById("integer").innerHTML = integer;
   document.getElementById("decimal").innerHTML = decimal
